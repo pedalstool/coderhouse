@@ -1,0 +1,24 @@
+{% extends "MVT/heredado.html" %}
+
+{% load static %}
+
+{% block contenidoEspecifico %}
+
+    <h1>Agregar Estudiante</h1>
+
+    {% if genericForm.errors %}
+    <p style="color: red;">Verificar los datos ingresados</p>
+    {% endif %}
+    
+    <form action="" method="POST"> {% csrf_token %}
+        
+        <table>
+
+            {{ genericForm.as_table }}
+
+        </table>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+{% endblock %}

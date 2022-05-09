@@ -1,0 +1,30 @@
+{% extends "MVT/heredado.html" %}
+
+{% load static %}
+
+{% block contenidoEspecifico %}
+
+<h2>Cursos con ese nombre:</h2>
+
+{% if cursos %}
+
+<ul>
+    {% for curso in cursos %}
+
+    <li> {{curso.nombre}} </li>
+
+    {% endfor %}
+
+</ul>
+
+<a class="btn btn-primary" href="{% url 'buscarCurso' %}">Volver a buscar</a>
+
+{% else %}
+<b>
+    <p>No hay cursos con ese nombre.</p>
+</b>
+<a class="btn btn-primary" href="{% url 'buscarCurso' %}">Volver a buscar</a>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "MVT/heredado.html" %}
+
+{% load static %}
+
+{% block contenidoEspecifico %}
+
+
+<h2>Listado de Profesores</h2>
+{% if listarProfesores %}
+<table cellspacing="0">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Cargo</th>
+    </tr>
+    <tr>
+        {% for f in listarProfesores %}
+        <td>{{f.nombre}}</td>
+        <td>{{f.apellido}}</td>
+        <td>{{f.email}}</td>
+        <td>{{f.cargo}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h3>Sin información</h3>
+{% endif %}
+
+<br>
+<a class="btn btn-primary" href="agregarProfesores">Agregar otro Profesor</a>
+
+{% endblock %}

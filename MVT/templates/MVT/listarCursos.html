@@ -1,0 +1,29 @@
+{% extends "MVT/heredado.html" %}
+
+{% load static %}
+
+{% block contenidoEspecifico %}
+
+
+<h2>Listado de Cursos</h2>
+{% if listarCursos %}
+<table cellspacing="0">
+    <tr>
+        <th>Curso</th>
+        <th>Camada</th>
+    </tr>
+    <tr>
+        {% for f in listarCursos %}
+        <td>{{f.nombre}}</td>
+        <td>{{f.camada}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h3>Sin información</h3>
+{% endif %}
+
+<br>
+<a class="btn btn-primary" href="agregarCursos">Agregar otro Curso</a>
+
+{% endblock %}
